@@ -1,4 +1,4 @@
-#include "Personal.h";
+#include "Personal.h"
 #include <string>
 
 using namespace std;

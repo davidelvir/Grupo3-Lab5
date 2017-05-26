@@ -6,12 +6,16 @@ using namespace std;
 
 class Mesero : public Personal{
 	private:
-		string listaplat;
+		vector<string> listaplat;
 
 	public:
 		Mesero();
-		Mesero(string,string,string,int,string,int,string);
+		Mesero(string,string,string,int,string,int,int,double, vector<string>*);
 		string getListaplat();
 		void setListaplat();
+
+		void eliminarplat();
+
+		void eliminartodos();
 
 };

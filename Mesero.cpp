@@ -7,7 +7,7 @@ Mesero::Mesero(){
 
 }
 
-Mesero::Mesero(string user, string password, string nombre, int edad, string id, int numero, string listaplat):Usuario(user,password,nombre,edad,id,numero){
+Mesero::Mesero(string user, string password, string nombre, int edad, string id, int numero,int aniocont,double sueldo, vector<string>* listaplat):Personal(user,password,nombre,edad,id,numero,aniocont,sueldo){
 	this -> listaplat = listaplat;
 }
 
@@ -17,4 +17,8 @@ string Mesero::getListaplat(){
 
 void Mesero::setListaplat(string listaplat){
 	this -> listaplat = listaplat;
+}
+
+void Mesero::eliminarplat(int num){
+
 }

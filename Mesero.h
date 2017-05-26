@@ -10,7 +10,7 @@ class Mesero : public Personal{
 
 	public:
 		Mesero();
-		Mesero(string,string,string,int,string,int,int,double, vector<string>*);
+		Mesero(string,string,string,int,string,int,int,double);
 		//string getListaplat();
 		void setListaplat(string);
 

@@ -1,14 +1,14 @@
 #ifndef LAVAPLATOS_H
 #define LAVAPLATOS_H
 #include <string>
-
+#include "Personal.h"
 using namespace std;
 
-class Lavapaltos : public Personal{
+class Lavaplatos : public Personal{
 public:
 	int motivacion;
 	Lavaplatos();
-	Lavaplatos(int,double,string,string,string,int,string,int);
+	Lavaplatos(string,string,string,int,string,int,int,double);
 	bool renunciar();
 	bool aumento();
 };

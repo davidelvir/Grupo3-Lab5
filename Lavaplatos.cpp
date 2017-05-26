@@ -5,7 +5,7 @@
 Lavaplatos::Lavaplatos(){
 
 }
-Lavaplatos::Lavaplatos(int contratacion,double sueldo,string user,string password,string nombre,int edad,string id,int numero):Personal(contratacion,sueldo,user,password,nombre,edad,id,numero){
+Lavaplatos::Lavaplatos(string user,string password,string nombre,int edad,string id,int numero,int contratacion,double sueldo):Personal(user,password,nombre,edad,id,numero,contratacion,sueldo){
 	this->motivacion = 20;
 }
 

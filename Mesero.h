@@ -1,6 +1,6 @@
 #include "Personal.h"
 #include <string>
-
+#include <vector>
 #pragma once
 using namespace std;
 
@@ -11,10 +11,10 @@ class Mesero : public Personal{
 	public:
 		Mesero();
 		Mesero(string,string,string,int,string,int,int,double, vector<string>*);
-		string getListaplat();
-		void setListaplat();
+		//string getListaplat();
+		void setListaplat(string);
 
-		void eliminarplat();
+		void eliminarplat(int);
 
 		void eliminartodos();
 

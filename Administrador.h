@@ -14,7 +14,7 @@ class Administrador : public Personal {
 		Administrador(string,string,string,int,string,int,int,double, int, int);
 		int getEmpcontratados();
 		void setEmpcontratados(int);
-		int Empdespedidos();
-		void Empdespedidos(int);
+		int getEmpdespedidos();
+		void setEmpdespedidos(int);
 	
 };

@@ -12,7 +12,7 @@ Administrador::Administrador(string user, string password, string nombre, int ed
 	this -> empdespedidos = empdespedidos;
 }
 
-int Administrador::getEmpcontratrados(){
+int Administrador::getEmpcontratados(){
 	return empcontratados;
 }
 

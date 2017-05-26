@@ -1,6 +1,6 @@
-#include "Ususario.h"
+#include "Usuario.h"
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 Usuario::Usuario(){
@@ -12,9 +12,9 @@ Usuario::Usuario(string user,string password,string nombre,int edad,string id, i
   this->user = user;
   this->password = password;
   this->nombre = nombre;
-  this->edad = edad;
+  Usuario::setEdad(edad);
   this->id = id;
-  this->numero = numero;
+  Usuario::setNumero(numero);
 }
 
 void Usuario::setUser(string pUser){
@@ -27,16 +27,24 @@ void Usuario::setNombre(string pNombre){
   nombre = pNombre;
 }
 void Usuario::setEdad(int pEdad){
+	while(pEdad<18){
+		cout<<"La edad no puede ser menor a 18. Ingrese otro valor";
+		cin>>pEdad;
+	}
   edad = pEdad;
 }
 void Usuario::setID(string pID){
   id = pID;
 }
 void Usuario::setNumero(int pNumero){
+	while(pNumero<9000000){
+		cout<<"El numero debe ser de al menos 8 digitos. Ingrese otro valor: ";
+		cin>>pNumero;
+	}
   numero = pNumero;
 }
 string Usuario::getUser(){
-  return usuario;
+  return user;
 }
 string Usuario::getPassword(){
   return password;

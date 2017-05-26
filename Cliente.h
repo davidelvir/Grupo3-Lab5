@@ -10,7 +10,7 @@ class Cliente : public Usuario{
 
     //constructores
     Cliente();
-    Cliente(string,int,string,string,string,int,string,int);
+    Cliente(string,string,string,string,int,string,int);
     
     //setters
     void setDireccion(string);

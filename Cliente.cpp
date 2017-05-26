@@ -8,10 +8,10 @@ Cliente::Cliente(){
 
 }
 
-Cliente::Cliente(string dir,int rating,string user,string password,string nombre,int edad, string id,int numero):Usuario(user,password,nombre,edad,id,numero){
+Cliente::Cliente(string dir,string user,string password,string nombre,int edad, string id,int numero):Usuario(user,password,nombre,edad,id,numero){
 
   this->direccion = dir;
-  this->rating = rating;
+  
 
 }
 void Cliente::setDireccion(string direccion){

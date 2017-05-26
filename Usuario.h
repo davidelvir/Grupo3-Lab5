@@ -17,7 +17,7 @@ class Usuario{
     //constructores
     Usuario();
     Usuario(string,string,string,int,string,int);
-
+    virtual ~Usuario();
     //setters
     void setUser(string);
     void setPassword(string);

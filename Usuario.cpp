@@ -12,10 +12,12 @@ Usuario::Usuario(string user,string password,string nombre,int edad,string id, i
   this->user = user;
   this->password = password;
   this->nombre = nombre;
-  Usuario::setEdad(edad);
+  setEdad(edad);
   this->id = id;
-  Usuario::setNumero(numero);
+  setNumero(numero);
 }
+
+Usuario::~Usuario() {}
 
 void Usuario::setUser(string pUser){
   user = pUser;

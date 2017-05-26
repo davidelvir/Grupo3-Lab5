@@ -20,5 +20,9 @@ void Mesero::setListaplat(string listaplat){
 }
 
 void Mesero::eliminarplat(int num){
+	listaplat.erase(listaplat.begin() + num);
+}
 
+void Mesero::eliminartodos(){
+	listaplat.clear();		
 }

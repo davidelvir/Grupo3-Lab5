@@ -7,12 +7,12 @@ Administrador::Administrador(){
 
 }
 
-Administrador::Administrador(int empcontratados, int empdespedidos){
+Administrador::Administrador(string user, string password, string nombre, int edad, string id, int numero, int empcontratados, int empdespedidos):Usuario(user,password,nombre,edad,id,numero){
 	this -> empcontratados = empcontratados;
 	this -> empdespedidos = empdespedidos;
 }
 
-int Administrador::getEmpcontratados(){
+int Administrador::getEmpcontrat.ados(){
 	return empcontratados;
 }
 

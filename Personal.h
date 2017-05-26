@@ -11,7 +11,7 @@ class Personal : public Usuario{
 
 	public:
 		Personal();
-		Personal(int, double);
+		Personal(string,string,string,int,string,int, int, double);
 		int getAniocont();
 		void setAniocont(int);
 		double getSueldo();

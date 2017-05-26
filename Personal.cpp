@@ -7,7 +7,7 @@ Personal::Personal(){
 
 }
 
-Personal::Personal(int aniocont, double sueldo){
+Personal::Personal(string user, string password, string nombre, int edad, string id, int numero, int aniocont, double sueldo):Usuario(user,password,nombre,edad,id,numero){
 	this -> aniocont = aniocont;
 	this -> sueldo = sueldo;
 }

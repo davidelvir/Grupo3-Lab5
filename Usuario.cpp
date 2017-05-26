@@ -28,7 +28,7 @@ void Usuario::setNombre(string pNombre){
 }
 void Usuario::setEdad(int pEdad){
 	while(pEdad<18){
-		cout<<"La edad no puede ser menor a 18. Ingrese otro valor";
+		cout<<"La edad no puede ser menor a 18. Ingrese otro valor: ";
 		cin>>pEdad;
 	}
   edad = pEdad;

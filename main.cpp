@@ -79,6 +79,8 @@ int main(){
     			cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
     			cin>>numero;
     			cout<<"Ingrese la direccion: ";
+    			string t;
+    			cin>>t;
     			getline(cin,direccion);
     			Usuario* c = new Cliente(direccion,user,password,nombre,edad,id,numero);
     			usuarios.push_back(c);
@@ -98,9 +100,34 @@ int main(){
 							break;
 						}
 					}
-
+					cout<<"Ingrese la constraseña: ";
+					cin>>password;
+					if(activo->getPassword()==password){
 					//activo=dynamic_cast<Personal*>(activo);
-					cout<<typeid(*activo).name()<<endl;
+					//cout<<typeid(*activo).name()<<endl;
+						bool salir = false;
+						while(!salir){
+							if(typeid(*activo).name()==typeid(Administrador).name()){
+								
+							}
+							if(typeid(*activo).name()==typeid(Cliente).name()){
+								Cliente* temp = dynamic_cast<Cliente*>(activo);
+								int rating;
+								cout<<"Ingrese el rating que le da al restaurante: ";
+								cin>>rating;
+								temp->setRating(rating);
+							}
+							if(typeid(*activo).name()==typeid(Mesero).name()){
+
+							}
+							if(typeid(*activo).name()==typeid(Chef).name()){
+
+							}
+							if(typeid(*activo).name()==typeid(Lavaplatos).name()){
+
+							}
+						}
+					}
 
     			}else{
     				cout<<"El usuario no existe."<<endl;

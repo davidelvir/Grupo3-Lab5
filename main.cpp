@@ -184,7 +184,11 @@ int main(){
     			}else{
     				cout<<"El usuario no existe."<<endl;
     			}
-
+    		break;
+    		}
+    		case 4:{
+    			vivo =false;
+    			break;
     		}
 			}
 		}

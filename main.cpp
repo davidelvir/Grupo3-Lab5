@@ -150,8 +150,6 @@ bool validarLogin(vector<Usuario*> users,string user){
 	}
 	return false;
 }
-<<<<<<< HEAD
-=======
 
 vector<Usuario*> agregar(vector<Usuario*> usuarios){
     int op;
@@ -188,7 +186,7 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cin >> aniocont;
             cout << "Ingrese el sueldo: ";
             cin >> sueldo;
-            Usuario* m = new Mesero(user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* m = new Mesero(user, password, nombre, edad, id, numero, aniocont, sueldo);
             usuarios.push_back(m);
         }    
         if (op == 2)
@@ -217,7 +215,7 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cin >> aniocont;
             cout << "Ingrese el sueldo: ";
             cin >> sueldo;
-            Usuario* l = new Lavaplatos(user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* l = new Lavaplatos(user, password, nombre, edad, id, numero, aniocont, sueldo);
             usuarios.push_back(l); 
         }   
         if (op == 3)
@@ -245,14 +243,13 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
             cin>>numero;
             cout << "Ingrese el nombre del platillo: ";
-            cint >> platillo;
+            cin >> platillo;
             cout << "Ingrese el rating del platillo: ";
             cin >> rating;
-            Usuario* c = new Chef(platillo, rating, user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* c = new Chef(platillo, rating, aniocont, sueldo, user, password, nombre, edad, id, numero);
             usuarios.push_back(c);
 
         }
     } while (op > 0 || op < 4);
     return usuarios;
 }
->>>>>>> 740ab640f2acb9b2e2c71c205e301b585796635f

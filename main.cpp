@@ -150,3 +150,109 @@ bool validarLogin(vector<Usuario*> users,string user){
 	}
 	return false;
 }
+<<<<<<< HEAD
+=======
+
+vector<Usuario*> agregar(vector<Usuario*> usuarios){
+    int op;
+    cout<<"------Sub Menu Agregar------"<<endl;
+    cout<<"1. Agregar Mesero"<<endl;
+    cout<<"2. Agregar Lavaplatos"<<endl;
+    cout<<"3. Agregar Chef"<<endl;
+    cout<<"4. Salir"<<endl;
+    cin>>op;
+    do {
+        if (op == 1)
+        {
+            string user;
+            string password;
+            string nombre;
+            int edad;
+            string id;
+            int numero;
+            int aniocont;
+            double sueldo;
+            cout<<"Ingrese el username: ";
+            cin>>user;
+            cout<<"Ingrese la constraseña: ";
+            cin>>password;
+            cout<<"Ingrese el nombre: ";
+            cin>>nombre;
+            cout<<"Ingrese la edad. Debe ser mayor de 18: ";
+            cin>>edad;
+            cout<<"Ingrese el id: ";
+            cin>>id;
+            cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
+            cin>>numero;
+            cout << "Ingrese el Año de Contratacion: ";
+            cin >> aniocont;
+            cout << "Ingrese el sueldo: ";
+            cin >> sueldo;
+            Usuario* m = new Mesero(user, password, nombre, edad, id, aniocont, sueldo);
+            usuarios.push_back(m);
+        }    
+        if (op == 2)
+        {
+            string user;
+            string password;
+            string nombre;
+            int edad;
+            string id;
+            int numero;
+            int aniocont;
+            double sueldo;
+            cout<<"Ingrese el username: ";
+            cin>>user;
+            cout<<"Ingrese la constraseña: ";
+            cin>>password;
+            cout<<"Ingrese el nombre: ";
+            cin>>nombre;
+            cout<<"Ingrese la edad. Debe ser mayor de 18: ";
+            cin>>edad;
+            cout<<"Ingrese el id: ";
+            cin>>id;
+            cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
+            cin>>numero;
+            cout << "Ingrese el Año de Contratacion: ";
+            cin >> aniocont;
+            cout << "Ingrese el sueldo: ";
+            cin >> sueldo;
+            Usuario* l = new Lavaplatos(user, password, nombre, edad, id, aniocont, sueldo);
+            usuarios.push_back(l); 
+        }   
+        if (op == 3)
+        {   
+            string user;
+            string password;
+            string nombre;
+            int edad;
+            string id;
+            int numero;
+            int aniocont;
+            double sueldo;
+            string platillo;
+            int rating;
+            cout<<"Ingrese el username: ";
+            cin>>user;
+            cout<<"Ingrese la constraseña: ";
+            cin>>password;
+            cout<<"Ingrese el nombre: ";
+            cin>>nombre;
+            cout<<"Ingrese la edad. Debe ser mayor de 18: ";
+            cin>>edad;
+            cout<<"Ingrese el id: ";
+            cin>>id;
+            cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
+            cin>>numero;
+            cout << "Ingrese el nombre del platillo: ";
+            cint >> platillo;
+            cout << "Ingrese el rating del platillo: ";
+            cin >> rating;
+            Usuario* c = new Chef(platillo, rating, user, password, nombre, edad, id, aniocont, sueldo);
+            usuarios.push_back(c);
+
+        }
+    } while (op > 0 || op < 4);
+    return usuarios;
+}
+>>>>>>> 740ab640f2acb9b2e2c71c205e301b585796635f

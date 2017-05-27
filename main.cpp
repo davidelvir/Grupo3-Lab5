@@ -271,3 +271,14 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
     return usuarios;
 }
 
+vector<Usuario*> eliminar(vector<Usuario*> usuarios){
+        int numbers =  0;
+        cout << "Ingrese la posicion que quiere eliminar: " << endl;
+        for(int i = 0; i < usuarios.size(); i++){
+            cout << i << " --> " << usuarios[i] -> getNombre() << endl;
+        }
+        cin >> numbers;
+        usuarios.erase(usuarios.begin() + numbers);
+        cout << "El empleado ha sido despedido" << endl;
+        return usuarios;
+}

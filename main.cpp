@@ -12,7 +12,8 @@
 using namespace std;
  
 bool validarLogin(vector<Usuario*>,string);
-vector<Usuario*>agregar(vector<Usuario*>);
+vector<Usuario*>agregar(vector<Usuario*>,int);
+vector<Usuario*>eliminar(vector<Usuario*>);
 int main(){
 
 	/*Usuario* p = new Cliente ("mir","juan1","juan","juan",23,"123",10000000);
@@ -121,10 +122,19 @@ int main(){
 								cin>>opA;
 								switch(opA){
 									case 1:{
-										usuarios = agregar(usuarios);
+										int op;
+    									cout<<"------Sub Menu Agregar------"<<endl;
+    									cout<<"1. Agregar Mesero"<<endl;
+    									cout<<"2. Agregar Lavaplatos"<<endl;
+    									cout<<"3. Agregar Chef"<<endl;
+    
+    									cin>>op;
+										usuarios = agregar(usuarios,op);
+
 										break;
 									}
 									case 2:{
+										usuarios=eliminar(usuarios);
 										break;
 									}
 									case 3:{
@@ -145,7 +155,6 @@ int main(){
 									}
 
 								}
-								usuarios = agregar(usuarios);
 							}
 							if(typeid(*activo).name()==typeid(Cliente).name()){
 								int opC;
@@ -208,14 +217,8 @@ bool validarLogin(vector<Usuario*> users,string user){
 }
 
 
-vector<Usuario*> agregar(vector<Usuario*> usuarios){
-    int op;
-    cout<<"------Sub Menu Agregar------"<<endl;
-    cout<<"1. Agregar Mesero"<<endl;
-    cout<<"2. Agregar Lavaplatos"<<endl;
-    cout<<"3. Agregar Chef"<<endl;
+vector<Usuario*> agregar(vector<Usuario*> usuarios,int op){
     
-    cin>>op;
     
         if (op == 1)
         {
@@ -311,3 +314,14 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
     return usuarios;
 }
 
+vector<Usuario*> eliminar(vector<Usuario*> usuarios){
+        int numbers =  0;
+        cout << "Ingrese la posicion que quiere eliminar: " << endl;
+        for(int i = 0; i < usuarios.size(); i++){
+            cout << i << " --> " << usuarios[i] -> getNombre() << endl;
+        }
+        cin >> numbers;
+        usuarios.erase(usuarios.begin() + numbers);
+        cout << "El empleado ha sido despedido" << endl;
+        return usuarios;
+}

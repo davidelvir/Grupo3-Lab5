@@ -139,15 +139,7 @@ int main(){
 										break;
 									}
 									case 3:{
-                                        int AumDec;
-                                        int numbers =  0;
-                                        cout << "Ingrese la posicion que quiere eliminar: " << endl;
-                                        for(int i = 0; i < usuarios.size(); i++){
-                                            cout << i << " --> " << usuarios[i] -> getNombre() << endl;
-                                        }
-                                        cin >> numbers;
-                                        usuarios.erase(usuarios.begin() + numbers);
-                                        cout << "El empleado ha sido despedido" << endl;
+                                        
                                         
 										break;
 									}
@@ -346,12 +338,18 @@ vector<Usuario*> eliminar(vector<Usuario*> usuarios){
 
 vector<Usuario*> AumDec(vector<Usuario*> usuarios){
         int numbers =  0;
+        Personal* p;
         cout << "Ingrese la posicion a la que desea Aumentar o Decrementar el sueldo: " << endl;
         for(int i = 0; i < usuarios.size(); i++){
             cout << i << " --> " << usuarios[i] -> getNombre() << endl;
         }
         cin >> numbers;
-        usuarios.erase(usuarios.begin() + numbers);
-        cout << "El empleado ha sido despedido" << endl;
+        if (typeid(*usuarios[i]).name() == typeid(Personal).name())
+        {
+            p = dynamic_cast<Personal*>(usuarios[i]);
+            
+        }
+        
+        //usuarios.erase(usuarios.begin() + numbers);
         return usuarios;
 }

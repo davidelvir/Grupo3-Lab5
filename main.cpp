@@ -173,6 +173,7 @@ int main(){
 										cout<<"Ingrese el rating que le da al restaurante: ";
 										cin>>rating;
 										temp->setRating(rating);
+										cout<<"Rating ingresado!"<<endl;
 										break;
 									}
 									case 2:{
@@ -182,13 +183,61 @@ int main(){
 								}
 							}
 							if(typeid(*activo).name()==typeid(Mesero).name()){
-
+								Mesero* m = dynamic_cast<Mesero*>(activo);
+								int opM;
+								cout<<"Ingrese 1 para dejar un plato, ingrese 2 para botar todos los paltos, ingrese 3 para salir: ";
+								cin>>opM;
+								switch(opM){
+									case 1:{
+										m->eliminartodos();
+										cout<<"Platos eliminados!"<<endl;
+										break;
+									}
+									case 2:{
+										m->eliminartodos();
+										cout<<"Platos eliminados!"<<endl;
+										break;
+									}
+									case 3:{
+										salir = true;
+										break;
+									}
+								}
 							}
 							if(typeid(*activo).name()==typeid(Chef).name()){
 
 							}
 							if(typeid(*activo).name()==typeid(Lavaplatos).name()){
+								Lavaplatos* l = dynamic_cast<Lavaplatos*>(activo);
+								int opL;
+								cout<<"Ingrese 1 para renunciar, ingrese 2 para pedir aumento y 3 para salir: ";
+								cin>>opL;
+								switch(opL){
+									case 1:{
 
+										if(l->renunciar()){
+											cout<<"Ha renunciado!!";
+										}else{
+											cout<<"No puede renunciar!";
+										}
+										break;
+									}
+									case 2:{
+										if(l->aumento()){
+											int aumento;
+											cout<<"Ingrese el nuevo salario: ";
+											cin>>aumento;
+											l->setSueldo(aumento);
+										}else{
+											cout<<"NO califica para un aumento!";
+										}
+										break;
+									case 3:{
+										salir = true;
+										break;
+									}
+									}
+								}
 							}
 						}
 					}

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <typeinfo>
+#include <fstream>
 using namespace std;
  
 bool validarLogin(vector<Usuario*>,string);
@@ -196,6 +197,13 @@ int main(){
     		break;
     		}
     		case 4:{
+    			fstream entrada;
+    			entrada.open("usuarios.txt",ios::out);
+    			for (int i = 0; i < usuarios.size(); ++i)
+    			{
+    				entrada<<usuarios[i]->getNombre()<<" "<<usuarios[i]->getUser()<<" "<<usuarios[i]->getPassword()<<" "<<usuarios[i]->getID()<<endl;
+    			}
+    			entrada.close();
     			vivo =false;
     			break;
     		}

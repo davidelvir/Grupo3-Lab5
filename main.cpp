@@ -12,6 +12,7 @@
 using namespace std;
  
 bool validarLogin(vector<Usuario*>,string);
+vector<Usuario*>agregar(vector<Usuario*>);
 int main(){
 
 	/*Usuario* p = new Cliente ("mir","juan1","juan","juan",23,"123",10000000);
@@ -108,7 +109,7 @@ int main(){
 						bool salir = false;
 						while(!salir){
 							if(typeid(*activo).name()==typeid(Administrador).name()){
-								
+								usuarios = agregar(usuarios);
 							}
 							if(typeid(*activo).name()==typeid(Cliente).name()){
 								int opC;
@@ -173,9 +174,9 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
     cout<<"1. Agregar Mesero"<<endl;
     cout<<"2. Agregar Lavaplatos"<<endl;
     cout<<"3. Agregar Chef"<<endl;
-    cout<<"4. Salir"<<endl;
+    
     cin>>op;
-    do {
+    
         if (op == 1)
         {
             string user;
@@ -266,7 +267,7 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             usuarios.push_back(c);
 
         }
-    } while (op > 0 || op < 4);
+    
     return usuarios;
 }
 

@@ -171,6 +171,7 @@ int main(){
 										cout<<"Ingrese el rating que le da al restaurante: ";
 										cin>>rating;
 										temp->setRating(rating);
+										cout<<"Rating ingresado!"<<endl;
 										break;
 									}
 									case 2:{

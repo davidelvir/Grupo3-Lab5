@@ -109,6 +109,42 @@ int main(){
 						bool salir = false;
 						while(!salir){
 							if(typeid(*activo).name()==typeid(Administrador).name()){
+								int opA;
+								cout<<"Elija una opcion"<<endl;
+								cout<<"1. Contratar"<<endl;
+								cout<<"2. Despedir"<<endl;
+								cout<<"3. Aumentar/Decrementar sueldo"<<endl;
+								cout<<"4. Empleado con mayor sueldo"<<endl;
+								cout<<"5. Empleado con menor sueldo"<<endl;
+								cout<<"6. Promedio de salarios"<<endl;
+								cout<<"7. Salir"<<endl;
+								cin>>opA;
+								switch(opA){
+									case 1:{
+										usuarios = agregar(usuarios);
+										break;
+									}
+									case 2:{
+										break;
+									}
+									case 3:{
+										break;
+									}
+									case 4:{
+										break;
+									}
+									case 5:{
+										break;
+									}
+									case 6:{
+										break;
+									}
+									case 7:{
+										salir = true;
+										break;
+									}
+
+								}
 								usuarios = agregar(usuarios);
 							}
 							if(typeid(*activo).name()==typeid(Cliente).name()){

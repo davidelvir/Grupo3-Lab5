@@ -260,21 +260,20 @@ int main(){
     			}
     		break;
     		}
-    		case 4:{
-    			fstream entrada;
-    			entrada.open("usuarios.txt",ios::out);
-    			for (int i = 0; i < usuarios.size(); ++i)
-    			{
-    				entrada<<usuarios[i]->getNombre()<<" "<<usuarios[i]->getUser()<<" "<<usuarios[i]->getPassword()<<" "<<usuarios[i]->getID()<<endl;
-    			}
-    			entrada.close();
-    			vivo =false;
-    			break;
     		
             }
-
+            case 4: {
+                fstream entrada;
+                entrada.open("usuarios.txt",ios::out);
+                for (int i = 0; i < usuarios.size(); ++i)
+                {
+                    entrada<<usuarios[i]->getNombre()<<" "<<usuarios[i]->getUser()<<" "<<usuarios[i]->getPassword()<<" "<<usuarios[i]->getID()<<endl;
+                }
+                entrada.close();
+                vivo =false;
+            
             }
-
+            break;
 		}
 	}
     return 0;

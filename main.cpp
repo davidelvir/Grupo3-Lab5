@@ -138,6 +138,16 @@ int main(){
 										break;
 									}
 									case 3:{
+                                        int AumDec;
+                                        int numbers =  0;
+                                        cout << "Ingrese la posicion que quiere eliminar: " << endl;
+                                        for(int i = 0; i < usuarios.size(); i++){
+                                            cout << i << " --> " << usuarios[i] -> getNombre() << endl;
+                                        }
+                                        cin >> numbers;
+                                        usuarios.erase(usuarios.begin() + numbers);
+                                        cout << "El empleado ha sido despedido" << endl;
+                                        
 										break;
 									}
 									case 4:{
@@ -317,6 +327,18 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios,int op){
 vector<Usuario*> eliminar(vector<Usuario*> usuarios){
         int numbers =  0;
         cout << "Ingrese la posicion que quiere eliminar: " << endl;
+        for(int i = 0; i < usuarios.size(); i++){
+            cout << i << " --> " << usuarios[i] -> getNombre() << endl;
+        }
+        cin >> numbers;
+        usuarios.erase(usuarios.begin() + numbers);
+        cout << "El empleado ha sido despedido" << endl;
+        return usuarios;
+}
+
+vector<Usuario*> AumDec(vector<Usuario*> usuarios){
+        int numbers =  0;
+        cout << "Ingrese la posicion a la que desea Aumentar o Decrementar el sueldo: " << endl;
         for(int i = 0; i < usuarios.size(); i++){
             cout << i << " --> " << usuarios[i] -> getNombre() << endl;
         }

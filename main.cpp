@@ -90,22 +90,22 @@ int main(){
     			break;
     		}
     		case 3:{
-    			string user;
-    			string password;
+    			string users;
+    			string passwords;
     			Usuario* activo;
     			cout<<"Ingrese el username: ";
-    			cin>>user;
+    			cin>>users;
     			if(validarLogin) {
     				for (int i = 0; i < usuarios.size(); ++i)
 					{
-						if(usuarios[i]->getUser()==user){
+						if(usuarios[i]->getUser()==users){
 							activo = usuarios[i];
 							break;
 						}
 					}
 					cout<<"Ingrese la constraseña: ";
-					cin>>password;
-					if(activo->getPassword()==password){
+					cin>>passwords;
+					if(activo->getPassword()==passwords){
 					//activo=dynamic_cast<Personal*>(activo);
 					//cout<<typeid(*activo).name()<<endl;
 						bool salir = false;
@@ -144,19 +144,26 @@ int main(){
 										break;
 									}
 									case 4:{
+
 										break;
 									}
 									case 5:{
+
 										break;
 									}
 									case 6:{
-                                        Usuario* user = new Personal();
-                                        Personal* per;
-                                        for (int i = 0; i < usuarios.size(); ++i)
-                                        {
-                                            per = dynamic_cast<Personal*>(user);
-
-                                        }
+                                        if(typeid(*activo).name()==typeid(Personal).name()){
+                                            int suma = 0, cant = 0;
+                                            int promedio;
+                                            Personal* per = static_cast<Personal*>(activo);
+                                            for (int i = 0; i < usuarios.size(); ++i)
+                                            {
+                                                cout << i << " Nombre: " << usuarios[i] -> getNombre() << endl;
+                                                suma += per -> getSueldo();
+                                                cant++;
+                                            }
+                                            promedio = suma * cant;
+                                            cout << "El Promedio es: " << promedio;                                        
 										break;
 									}
 									case 7:{
@@ -245,7 +252,8 @@ int main(){
                                 }
 							}
 						}
-					}
+					} 
+                }
 
     			} else {
     				cout<<"El usuario no existe."<<endl;
@@ -262,11 +270,15 @@ int main(){
     			entrada.close();
     			vivo =false;
     			break;
-    		}
-			}
+    		
+            }
+
+            }
+
 		}
 	}
-
+    return 0;
+}
 	//delete p;
 
 

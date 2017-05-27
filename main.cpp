@@ -115,9 +115,10 @@ int main(){
 								cout<<"Elija una opcion: "<<endl;
 								cout<<"1. Dar rating"<<endl;
 								cout<<"2. Salir"<<endl;
-								cin<<opC;
+								cin>>opC;
+								Cliente* temp = dynamic_cast<Cliente*>(activo);
 								switch(opC){
-									Cliente* temp = dynamic_cast<Cliente*>(activo);
+									
 									case 1:{
 										int rating;
 										cout<<"Ingrese el rating que le da al restaurante: ";
@@ -201,7 +202,7 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cin >> aniocont;
             cout << "Ingrese el sueldo: ";
             cin >> sueldo;
-            Usuario* m = new Mesero(user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* m = new Mesero(user, password, nombre, edad, id, numero, aniocont, sueldo);
             usuarios.push_back(m);
         }    
         if (op == 2)
@@ -230,7 +231,7 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cin >> aniocont;
             cout << "Ingrese el sueldo: ";
             cin >> sueldo;
-            Usuario* l = new Lavaplatos(user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* l = new Lavaplatos(user, password, nombre, edad, id, numero, aniocont, sueldo);
             usuarios.push_back(l); 
         }   
         if (op == 3)
@@ -258,10 +259,10 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
             cout<<"Ingrese el numero. Deben ser mínimo 8 digitos: ";
             cin>>numero;
             cout << "Ingrese el nombre del platillo: ";
-            cint >> platillo;
+            cin >> platillo;
             cout << "Ingrese el rating del platillo: ";
             cin >> rating;
-            Usuario* c = new Chef(platillo, rating, user, password, nombre, edad, id, aniocont, sueldo);
+            Usuario* c = new Chef(platillo, rating, aniocont, sueldo, user, password, nombre, edad, id, numero);
             usuarios.push_back(c);
 
         }

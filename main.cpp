@@ -111,11 +111,25 @@ int main(){
 								
 							}
 							if(typeid(*activo).name()==typeid(Cliente).name()){
-								Cliente* temp = dynamic_cast<Cliente*>(activo);
-								int rating;
-								cout<<"Ingrese el rating que le da al restaurante: ";
-								cin>>rating;
-								temp->setRating(rating);
+								int opC;
+								cout<<"Elija una opcion: "<<endl;
+								cout<<"1. Dar rating"<<endl;
+								cout<<"2. Salir"<<endl;
+								cin<<opC;
+								switch(opC){
+									Cliente* temp = dynamic_cast<Cliente*>(activo);
+									case 1:{
+										int rating;
+										cout<<"Ingrese el rating que le da al restaurante: ";
+										cin>>rating;
+										temp->setRating(rating);
+										break;
+									}
+									case 2:{
+										salir = true;
+										break;
+									}
+								}
 							}
 							if(typeid(*activo).name()==typeid(Mesero).name()){
 
@@ -150,8 +164,7 @@ bool validarLogin(vector<Usuario*> users,string user){
 	}
 	return false;
 }
-<<<<<<< HEAD
-=======
+
 
 vector<Usuario*> agregar(vector<Usuario*> usuarios){
     int op;
@@ -255,4 +268,4 @@ vector<Usuario*> agregar(vector<Usuario*> usuarios){
     } while (op > 0 || op < 4);
     return usuarios;
 }
->>>>>>> 740ab640f2acb9b2e2c71c205e301b585796635f
+
